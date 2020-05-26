@@ -19,3 +19,23 @@
 .navbar{
 	margin-bottom: 0px !important;
 }
+.fill-height {
+	margin-top: 51px;
+}
+
+
+/* modal window*/
+.modal{
+    overflow: hidden;
+}
+.modal-dialog{
+    margin-right: 0;
+    margin-left: 0;
+}
+.modeless{
+    top:10%;
+    left:50%;
+    bottom:auto;
+    right:auto;
+    margin-left:-300px;
+}

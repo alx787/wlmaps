@@ -8,7 +8,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -21,56 +21,14 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU" type="text/javascript"></script>
 
 
-
-    <script type="text/javascript">
-        ymaps.ready(init);
-
-        function init() {
-            var myMap = new ymaps.Map("map", {
-                    center: [58.610018, 49.602077],
-                    zoom: 10
-                }, {
-                    searchControlProvider: 'yandex#search'
-                }),
-
-            // Создаем геообъект с типом геометрии "Точка".
-                myGeoObject = new ymaps.GeoObject({
-                    // Описание геометрии.
-                    geometry: {
-                        type: "Point",
-                        coordinates: [58.62, 49.602077]
-                    },
-                    // Свойства.
-                    properties: {
-                        // Контент метки.
-                        iconContent: 'xx777x 43RU',
-                        hintContent: ''
-                    }
-                }, {
-                    // Опции.
-                    // Иконка метки будет растягиваться под размер ее содержимого.
-                    preset: 'islands#blackStretchyIcon',
-                    // Метку можно перемещать.
-                    draggable: true
-                });
-
-                centerOffice = new ymaps.Placemark([58.610018, 49.602077], {
-                  balloonContent: '',
-                  iconCaption: 'ATX'
-                }, {
-                  preset: 'islands#greenDotIconWithCaption'
-                });
+    <script src="js/mapinit.js"></script>
 
 
-            myMap.geoObjects.add(myGeoObject);
-            myMap.geoObjects.add(centerOffice);
-          }
 
-    </script>    
   </head>
   <body class="full-height">
     <!-- Классы navbar и navbar-default (базовые классы меню) -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <!-- Контейнер (определяет ширину Navbar) -->
       <div class="container-fluid">
         <!-- Заголовок -->
@@ -89,10 +47,12 @@
           <!-- Содержимое основной части -->
           <ul class="nav navbar-nav navbar-right">
             <!-- <li class="active"><a href="#">Список ТС</a></li> -->
-            <li><a href="#">Список ТС</a></li>
+            <li><a href="#myModal" data-backdrop="false" data-toggle="modal">Список ТС</a></li>
             <li><a href="#">Положение объектов</a></li>
             <li><a href="#">Просмотр треков</a></li>
             <li><a href="#">Пробеги</a></li>
+            <!-- <button type = "button" class = "btn btn-default navbar-btn">Navbar Button</button> -->
+
             <!-- <li><a href="#">Ссылка 5</a></li> -->
 
            <!-- Выпадающий список -->
@@ -113,6 +73,27 @@
     </nav>
 
 
+    <div id="myModal" class="modal fade modeless">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title">Settings</h4>
+
+                </div>
+                <div class="modal-body">
+                    <p>Settings</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <div class="container-fluid fill-height bg-info">
         <div class="row full-height">
@@ -131,8 +112,11 @@
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery/jquery-3.5.1.min.js"></script>
+    <script src="js/jqueryui/jquery-ui.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <script src="js/myscript.js"></script>
   </body>
 </html>
